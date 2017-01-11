@@ -1,0 +1,24 @@
+service: sls-elm
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+
+plugins:
+  - serverless-webpack
+
+custom:
+  webpack: ./webpack.config.js
+
+functions:
+  api:
+    handler: api.handler
+    events:
+      - http:
+          integration: lambda-proxy
+          path: /
+          method: ANY
+      - http:
+          integration: lambda-proxy
+          path: /{proxy+}
+          method: ANY
