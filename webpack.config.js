@@ -1,10 +1,7 @@
-const nodeExternals = require('webpack-node-externals');
 const path = require('path');
 
 module.exports = {
-  entry: [
-    './api.js',
-  ],
+  entry: './api.js',
   noParse: /\.elm$/,
   target: 'node',
 
