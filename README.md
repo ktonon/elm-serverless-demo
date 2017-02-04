@@ -35,7 +35,7 @@ There are four files that you should check out in this demo to get a better unde
 [serverless-webpack]:https://github.com/elastic-coders/serverless-webpack
 [webpack]:https://webpack.github.io/
 
-[API.elm]:https://github.com/ktonon/elm-serverless-demo/blob/master/src/API.js
+[API.elm]:https://github.com/ktonon/elm-serverless-demo/blob/master/src/API.elm
 [api.js]:https://github.com/ktonon/elm-serverless-demo/blob/master/src/api.js
 [serverless.yml]:https://github.com/ktonon/elm-serverless-demo/blob/master/serverless.yml
 [webpack.config.js]:https://github.com/ktonon/elm-serverless-demo/blob/master/webpack.config.js
