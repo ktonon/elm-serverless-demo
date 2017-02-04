@@ -4,16 +4,19 @@ provider:
   name: aws
   runtime: nodejs4.3
 
+# The webpack plugin will transpile elm to JavaScript
 plugins:
   - serverless-webpack
-
 custom:
   webpack: ./webpack.config.js
 
 functions:
   api:
-    handler: api.handler
+    handler: api.handler # Refers to function `handler` exported from `api.js`
     events:
+      # The following sets up Lambda Proxy Integration
+      # Basically, the elm app will do the routing instead of
+      # API Gateway
       - http:
           integration: lambda-proxy
           path: /

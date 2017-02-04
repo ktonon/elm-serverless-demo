@@ -1,7 +1,10 @@
 const path = require('path');
+const webpack = require('webpack');
+
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  entry: './api.js',
+  entry: './src/api.js',
   noParse: /\.elm$/,
   target: 'node',
 
@@ -13,6 +16,7 @@ module.exports = {
 
   module: {
     loaders: [
+      // Sets up the elm loader
       {
         test: /\.elm$/,
         exclude: [/elm-stuff/, /node_modules/],
@@ -20,4 +24,9 @@ module.exports = {
       },
     ],
   },
+
+  plugins: (isProd
+    ? [new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })]
+    : []
+  ),
 };
