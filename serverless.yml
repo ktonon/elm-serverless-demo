@@ -1,27 +1,95 @@
-service: sls-elm
+service: elm-serverless-demo
 
 provider:
   name: aws
-  runtime: nodejs4.3
+  runtime: nodejs6.10
 
-# The webpack plugin will transpile elm to JavaScript
 plugins:
   - serverless-webpack
+  - serverless-offline
+
 custom:
-  webpack: ./webpack.config.js
+  serverless-offline:
+    location: .webpack
+    dontPrintOutput: true
 
 functions:
-  api:
-    handler: api.handler # Refers to function `handler` exported from `api.js`
+  hello:
+    handler: hello.handler # Refers to function `handler` exported from `Hello/api.js`
     events:
-      # The following sets up Lambda Proxy Integration
-      # Basically, the elm app will do the routing instead of
-      # API Gateway
       - http:
           integration: lambda-proxy
           path: /
           method: ANY
+
+  config:
+    handler: config.handler
+    events:
       - http:
           integration: lambda-proxy
-          path: /{proxy+}
+          path: /config
+          method: ANY
+
+  forms:
+    handler: forms.handler
+    events:
+      - http:
+          integration: lambda-proxy
+          path: /forms
+          method: ANY
+
+  interop:
+    handler: interop.handler
+    events:
+      - http:
+          integration: lambda-proxy
+          path: /interop
+          method: ANY
+      - http:
+          integration: lambda-proxy
+          path: /interop/{proxy+}
+          method: ANY
+
+  routing:
+    handler: routing.handler
+    events:
+      - http:
+          integration: lambda-proxy
+          path: /routing
+          method: ANY
+      - http:
+          integration: lambda-proxy
+          path: /routing/{proxy+} # Lambda Proxy Integration
+          method: ANY
+
+  pipelines:
+    handler: pipelines.handler
+    events:
+      - http:
+          integration: lambda-proxy
+          path: /pipelines
+          method: ANY
+
+  sideEffects:
+    handler: sideEffects.handler
+    events:
+      - http:
+          integration: lambda-proxy
+          path: /side-effects
+          method: ANY
+      - http:
+          integration: lambda-proxy
+          path: /side-effects/{proxy+}
+          method: ANY
+
+  quoted:
+    handler: quoted.handler
+    events:
+      - http:
+          integration: lambda-proxy
+          path: /quoted
+          method: ANY
+      - http:
+          integration: lambda-proxy
+          path: /quoted/{proxy+}
           method: ANY

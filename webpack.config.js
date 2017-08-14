@@ -1,32 +1,47 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const isProd = process.env.NODE_ENV === 'production';
-
-module.exports = {
-  entry: './src/api.js',
-  noParse: /\.elm$/,
-  target: 'node',
+const config = {
+  entry: {
+    config: './src/Config/api.js',
+    forms: './src/Forms/api.js',
+    hello: './src/Hello/api.js',
+    interop: './src/Interop/api.js',
+    pipelines: './src/Pipelines/api.js',
+    quoted: './src/Quoted/api.js',
+    routing: './src/Routing/api.js',
+    sideEffects: './src/SideEffects/api.js',
+  },
+  target: 'node', // Ignores built-in modules like path, fs, etc.
 
   output: {
     libraryTarget: 'commonjs',
-    path: path.resolve(`${__dirname}/public`),
-    filename: 'api.js',
+    path: path.resolve(`${__dirname}/.webpack`),
+    filename: '[name].js',
   },
 
   module: {
-    loaders: [
-      // Sets up the elm loader
-      {
-        test: /\.elm$/,
-        exclude: [/elm-stuff/, /node_modules/],
-        loader: 'elm-webpack',
-      },
-    ],
+    loaders: [{
+      // Compiles elm to JavaScript.
+      test: /\.elm$/,
+      exclude: [/elm-stuff/, /node_modules/],
+      loader: 'elm-webpack-loader',
+    }],
   },
-
-  plugins: (isProd
-    ? [new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })]
-    : []
-  ),
 };
+
+if (process.env.NODE_ENV === 'production') {
+  // Bridge is written for node 6.10. While AWS Lambda supports it
+  // the UglifyJsPlugin does not :( so until that happens we use babel.
+  config.module.loaders.push({
+    test: /\.js$/,
+    exclude: [/elm-stuff/, /node_modules/],
+    loader: 'babel-loader',
+    options: { presets: 'env' },
+  });
+
+  config.plugins = config.plugins || [];
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin());
+}
+
+module.exports = config;

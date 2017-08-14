@@ -1,4 +1,5 @@
 /elm-stuff
 /node_modules
 /public
-/.serverless
+.serverless
+.webpack
