@@ -1,7 +1,7 @@
 elm serverless demo
 ===================
 
-This repo demonstrates how to use [![elm-package](https://img.shields.io/badge/elm--serverless-4.0.1-blue.svg)](http://package.elm-lang.org/packages/ktonon/elm-serverless/4.0.1). It is kept up to date with that release version of the package. For a demo which is kept in sync with the master branch of `elm-serverless` see the [demo embedded in that repo](https://github.com/ktonon/elm-serverless/tree/master/demo)
+This repo demonstrates how to use [![elm-package](https://img.shields.io/badge/elm--serverless-4.0.1-blue.svg)](http://package.elm-lang.org/packages/ktonon/elm-serverless/4.0.1). It is kept up to date with that release version of the package. For a demo which is kept in sync with the master branch of `elm-serverless` see the [demo embedded in that repo](https://github.com/ktonon/elm-serverless/tree/master)
 
 ## Run locally
 
@@ -60,23 +60,21 @@ Two tools are involved in getting your elm app on [AWS Lambda][]:
 [/routing]:http://localhost:3000/routing
 [/side-effects]:http://localhost:3000/side-effects
 
-[Config]:https://github.com/ktonon/elm-serverless/blob/master/demo/src/Config
-[Forms]:https://github.com/ktonon/elm-serverless/blob/master/demo/src/Forms
-[Hello]:https://github.com/ktonon/elm-serverless/blob/master/demo/src/Hello
-[Interop]:https://github.com/ktonon/elm-serverless/blob/master/demo/src/Interop
-[Pipelines]:https://github.com/ktonon/elm-serverless/blob/master/demo/src/Pipelines
-[Quoted]:https://github.com/ktonon/elm-serverless/blob/master/demo/src/Quoted
-[Routing]:https://github.com/ktonon/elm-serverless/blob/master/demo/src/Routing
-[SideEffects]:https://github.com/ktonon/elm-serverless/blob/master/demo/src/SideEffects
+[Config]:https://github.com/ktonon/elm-serverless-demo/blob/master/src/Config
+[Forms]:https://github.com/ktonon/elm-serverless-demo/blob/master/src/Forms
+[Hello]:https://github.com/ktonon/elm-serverless-demo/tree/master/src/Hello
+[Interop]:https://github.com/ktonon/elm-serverless-demo/blob/master/src/Interop
+[Pipelines]:https://github.com/ktonon/elm-serverless-demo/blob/master/src/Pipelines
+[Quoted]:https://github.com/ktonon/elm-serverless-demo/blob/master/src/Quoted
+[Routing]:https://github.com/ktonon/elm-serverless-demo/blob/master/src/Routing
+[SideEffects]:https://github.com/ktonon/elm-serverless-demo/blob/master/src/SideEffects
 
-[API.elm]:https://github.com/ktonon/elm-serverless/blob/master/demo/src/API.elm
-[api.js]:https://github.com/ktonon/elm-serverless/blob/master/demo/src/api.js
 [AWS Lambda]:https://aws.amazon.com/lambda
 [elm-serverless]:https://github.com/ktonon/elm-serverless
 [elm-webpack-loader]:https://github.com/elm-community/elm-webpack-loader
 [serverless-offline]:https://github.com/dherault/serverless-offline
 [serverless-webpack]:https://github.com/elastic-coders/serverless-webpack
-[serverless.yml]:https://github.com/ktonon/elm-serverless/blob/master/demo/serverless.yml
+[serverless.yml]:https://github.com/ktonon/elm-serverless-demo/blob/master/serverless.yml
 [serverless]:https://serverless.com/
-[webpack.config.js]:https://github.com/ktonon/elm-serverless/blob/master/demo/webpack.config.js
+[webpack.config.js]:https://github.com/ktonon/elm-serverless-demo/blob/master/webpack.config.js
 [webpack]:https://webpack.github.io/
