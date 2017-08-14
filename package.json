@@ -23,6 +23,6 @@
     "serverless-webpack": "2.0.0",
     "shebang-loader": "0.0.1",
     "strip-debug-loader": "^1.0.0",
-    "webpack": "^1.14.0"
+    "webpack": "^3.3.0"
   }
 }
