@@ -10,7 +10,7 @@ plugins:
 
 custom:
   serverless-offline:
-    location: .webpack
+    location: .webpack/service
     dontPrintOutput: true
 
 functions:
