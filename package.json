@@ -20,7 +20,7 @@
     "rc": "^1.1.6",
     "serverless": "^1.17.0",
     "serverless-offline": "^3.15.1",
-    "serverless-webpack": "2.0.0",
+    "serverless-webpack": "^3.0.0-rc.1",
     "shebang-loader": "0.0.1",
     "strip-debug-loader": "^1.0.0",
     "webpack": "^3.3.0"
