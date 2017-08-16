@@ -18,11 +18,11 @@
     "eslint": "^3.13.1",
     "eslint-config-es2015": "^1.1.0",
     "rc": "^1.1.6",
-    "serverless": "^1.17.0",
-    "serverless-offline": "^3.15.1",
-    "serverless-webpack": "^3.0.0-rc.1",
+    "serverless": "^1.19.0",
+    "serverless-offline": "^3.15.3",
+    "serverless-webpack": "^2.2.0",
     "shebang-loader": "0.0.1",
     "strip-debug-loader": "^1.0.0",
-    "webpack": "^3.3.0"
+    "webpack": "^3.5.4"
   }
 }
